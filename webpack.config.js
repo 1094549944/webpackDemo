@@ -1,7 +1,21 @@
 // webpack 是node的写法
 let path = require('path')
 let HtmlWebpackPlugin = require('html-webpack-plugin')
+let MiniCssExtractPlugin = require('mini-css-extract-plugin')
+let OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
+let UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin')
 module.exports = {
+  // 优化css 优化项
+  optimization: {
+    minimizer: [
+      new UglifyjsWebpackPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCssAssetsWebpackPlugin()
+    ]
+  },
   devServer: {
     // 它指定了服务器资源的根目录，如果不写入contentBase的值，那么contentBase默认是项目的目录。
     contentBase: path.resolve(__dirname, 'distDemo1'),
@@ -45,6 +59,10 @@ module.exports = {
       },
       // 添加hash 时间戳
       hash: true
+    }),
+    new MiniCssExtractPlugin({
+      // template: path.join(__dirname, './src/index.css'),
+      filename: 'main.css'
     })
   ],
   // 模块
@@ -69,14 +87,13 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: 'style-loader',
-            options: {
-              insertAt: 'top'
-            }
-          },
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
+            options: {}
+          },
+          {
+            loader: 'postcss-loader',
             options: {}
           }
         ]
@@ -84,14 +101,13 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
-          {
-            loader: 'style-loader',
-            options: {
-              insertAt: 'top'
-            }
-          },
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
+            options: {}
+          },
+          {
+            loader: 'postcss-loader',
             options: {}
           },
           {
