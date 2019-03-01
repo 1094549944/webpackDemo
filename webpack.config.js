@@ -76,6 +76,36 @@ module.exports = {
      */
     // 规则
     rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loaer: 'eslint-loader',
+          enforce: 'pre', // previous post
+          options: {}
+        }
+      },
+      {
+        test: /\.js$/, // normal 普通的loader
+        use: {
+          loader: 'babel-loader',
+          options: {
+            // 用babel-loader 需要把es6->es5
+            // 预设
+            presets: ['@babel/preset-env'],
+            plugins: [
+              ['@babel/plugin-proposal-decorators', { legacy: true }],
+              ['@babel/plugin-proposal-class-properties', { loose: true }],
+              ['@babel/plugin-transform-runtime']
+            ]
+          }
+        },
+        include: path.resolve(__dirname, 'src'),
+        exclude: /node-modules/
+        // 只处理src目录下面的。
+        // 你也可以配置一条规则处理node_modules下面的。
+        // 我记得swiper不知道哪一版本的直接把原来为编译的es6的语法塞给我，导致浏览器不兼容。
+      },
+
       // css css-loader
       /**
        * css-loader：解决@import 语法
