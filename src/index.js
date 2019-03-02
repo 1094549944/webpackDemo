@@ -1,6 +1,8 @@
 import a from './a'
 require('./index.css')
 require('./index.less')
+// import $ from 'expose-loader?$!jquery'
+// import $ from 'jquery'
 
 let number = 12345678432421432143215132
 console.log(number)

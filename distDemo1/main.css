@@ -1,0 +1,13 @@
+body {
+  background: red;
+}
+
+body .content {
+  background: orange;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #ccc;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+

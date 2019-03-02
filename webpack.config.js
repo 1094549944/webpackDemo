@@ -4,6 +4,7 @@ let HtmlWebpackPlugin = require('html-webpack-plugin')
 let MiniCssExtractPlugin = require('mini-css-extract-plugin')
 let OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 let UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin')
+let webpack = require('webpack')
 module.exports = {
   // 优化css 优化项
   optimization: {
@@ -63,6 +64,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       // template: path.join(__dirname, './src/index.css'),
       filename: 'main.css'
+    }),
+    // webpack 插件 解决全局引入的问题
+    new webpack.ProvidePlugin({
+      // 在每个模块中注入$ 符号
+      $: 'jquery'
     })
   ],
   // 模块
@@ -76,14 +82,18 @@ module.exports = {
      */
     // 规则
     rules: [
-      {
-        test: /\.js$/,
-        use: {
-          loaer: 'eslint-loader',
-          enforce: 'pre', // previous post
-          options: {}
-        }
-      },
+      // {
+      //   test: require.resolve('jquery'),
+      //   use: 'expose-loader?$'
+      // },
+      // {
+      //   test: /\.js$/,
+      //   use: {
+      //     loader: 'eslint-loader',
+      //     enforce: 'pre', // previous post
+      //     options: {}
+      //   }
+      // },
       {
         test: /\.js$/, // normal 普通的loader
         use: {
@@ -110,7 +120,7 @@ module.exports = {
       /**
        * css-loader：解决@import 语法
        * style-loader:把css 插入到head标签中
-       * less-loaer:处理less 文件 要安装less less-loader
+       * less-loaderr:处理less 文件 要安装less less-loader
        * sass-loader
        * stylus-loader
        */
