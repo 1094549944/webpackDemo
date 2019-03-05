@@ -3295,6 +3295,17 @@ eval("__webpack_require__(/*! @babel/polyfill */ \"./node_modules/@babel/polyfil
 
 /***/ }),
 
+/***/ "./src/avatar.png":
+/*!************************!*\
+  !*** ./src/avatar.png ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"/img/970d74a8cc20c1984b93de3e4512183b.png\";\n\n//# sourceURL=webpack:///./src/avatar.png?");
+
+/***/ }),
+
 /***/ "./src/index.css":
 /*!***********************!*\
   !*** ./src/index.css ***!
@@ -3314,7 +3325,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _a__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./a */ \"./src/a.js\");\n/* harmony import */ var _a__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_a__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n__webpack_require__(/*! ./index.css */ \"./src/index.css\");\n\n__webpack_require__(/*! ./index.less */ \"./src/index.less\"); // import $ from 'expose-loader?$!jquery'\n\n\nconsole.log($);\nvar number = 12345678432421432143215132;\nconsole.log(number);\n\nvar A = function A() {\n  _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, A);\n\n  this.a = '我是被打印的';\n};\n\nvar getClass = new A();\nconsole.log(getClass.a);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _a__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./a */ \"./src/a.js\");\n/* harmony import */ var _a__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_a__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _avatar_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./avatar.png */ \"./src/avatar.png\");\n/* harmony import */ var _avatar_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_avatar_png__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\nvar image = new Image();\nconsole.log(_avatar_png__WEBPACK_IMPORTED_MODULE_2___default.a);\nimage.src = _avatar_png__WEBPACK_IMPORTED_MODULE_2___default.a;\ndocument.body.appendChild(image);\n\n__webpack_require__(/*! ./index.css */ \"./src/index.css\");\n\n__webpack_require__(/*! ./index.less */ \"./src/index.less\");\n\nvar number = 12345678432421432143215132;\nconsole.log(number);\n\nvar A = function A() {\n  _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, A);\n\n  this.a = '我是被打印的';\n};\n\nvar getClass = new A();\nconsole.log(getClass.a);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 

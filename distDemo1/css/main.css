@@ -9,5 +9,11 @@ body .content {
   border: 2px solid #ccc;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+  background: url(/img/970d74a8cc20c1984b93de3e4512183b.png);
+}
+body .content-img {
+  width: 100px;
+  height: 100px;
+  background: yellow;
 }
 
